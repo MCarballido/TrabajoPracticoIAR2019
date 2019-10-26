@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="624.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="FrontEnd.FXMLDocumentController">
+    <children>
+        <Label fx:id="label" layoutX="37.0" layoutY="297.0" minHeight="16" minWidth="69" text="Búsqueda en Profundidad (DFS)">
+         <font>
+            <Font size="16.0" />
+         </font></Label>
+      <TextField fx:id="txtNewNode" layoutX="218.0" layoutY="62.0" prefHeight="25.0" prefWidth="107.0" />
+      <Label fx:id="lblNewNode" layoutX="28.0" layoutY="64.0" text="Nombre de un nuevo nodo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblNewArc" disable="true" layoutX="446.0" layoutY="64.0" text="Nuevo arco del grafo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbNodoFrom" disable="true" layoutX="595.0" layoutY="62.0" prefHeight="25.0" prefWidth="60.0" />
+      <ComboBox fx:id="cmbNodoTo" disable="true" layoutX="683.0" layoutY="62.0" prefHeight="25.0" prefWidth="60.0" />
+      <Label fx:id="lblArcArrow" disable="true" layoutX="662.0" layoutY="66.0" text="-&gt;" />
+      <Button fx:id="btnNuevoNodo" layoutX="225.0" layoutY="109.0" mnemonicParsing="false" onAction="#onNodeAddPress" prefHeight="25.0" prefWidth="99.0" text="Añadir Nodo" />
+      <Button fx:id="btnNuevoArco" disable="true" layoutX="655.0" layoutY="109.0" mnemonicParsing="false" onAction="#onNewArcPress" prefHeight="25.0" prefWidth="85.0" text="Añadir Arco" />
+      <Button fx:id="btnGenerarNodos" layoutX="225.0" layoutY="215.0" mnemonicParsing="false" onAction="#onGenerateNodesPress" prefHeight="25.0" prefWidth="99.0" text="Generar Grafo" />
+      <ListView fx:id="lstNodes" layoutX="27.0" layoutY="102.0" prefHeight="143.0" prefWidth="183.0" />
+      <Button fx:id="btnClearListView" layoutX="225.0" layoutY="161.0" mnemonicParsing="false" onAction="#onClearNodesPress" prefHeight="25.0" prefWidth="99.0" text="Limpiar Nodos" />
+      <ListView fx:id="lstArcs" layoutX="446.0" layoutY="102.0" prefHeight="143.0" prefWidth="183.0" />
+      <Button fx:id="btnClearArcs" disable="true" layoutX="654.0" layoutY="161.0" mnemonicParsing="false" onAction="#onClearArcsPress" text="Limpiar Arcos" />
+      <Button fx:id="btnGenerateNew" layoutX="28.0" layoutY="21.0" mnemonicParsing="false" onAction="#onCreateNewGraphPress" prefHeight="25.0" prefWidth="131.0" text="Crear nuevo grafo" />
+      <Label fx:id="label1" layoutX="40.0" layoutY="470.0" minHeight="16" minWidth="69" text="Búsqueda en Amplitud (BFS)">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblStartDFS" layoutX="40.0" layoutY="342.0" text="Comienzo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEndDFS" layoutX="202.0" layoutY="342.0" text="Meta">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbStartDFS" layoutX="120.0" layoutY="340.0" prefHeight="25.0" prefWidth="60.0" />
+      <ComboBox fx:id="cmbEndDFS" layoutX="253.0" layoutY="340.0" prefHeight="25.0" prefWidth="60.0" />
+      <Button fx:id="btnSearchDFS" layoutX="335.0" layoutY="340.0" mnemonicParsing="false" onAction="#onDFS" prefHeight="25.0" prefWidth="158.0" text="Buscar en Profundidad" />
+      <Label fx:id="lblPathDFS" layoutX="40.0" layoutY="397.0" text="Camino:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtResultDFS" layoutX="116.0" layoutY="395.0" prefHeight="25.0" prefWidth="490.0" />
+      <Label fx:id="lblStartBFS" layoutX="42.0" layoutY="519.0" text="Comienzo">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblEndBFS" layoutX="204.0" layoutY="519.0" text="Meta">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbStartBFS" layoutX="122.0" layoutY="517.0" prefHeight="25.0" prefWidth="60.0" />
+      <ComboBox fx:id="cmbEndBFS" layoutX="255.0" layoutY="517.0" prefHeight="25.0" prefWidth="60.0" />
+      <Button fx:id="btnSearchBFS" layoutX="337.0" layoutY="517.0" mnemonicParsing="false" onAction="#onBFS" prefHeight="25.0" prefWidth="158.0" text="Buscar en Amplitud" />
+      <Label fx:id="lblPathBFS" layoutX="42.0" layoutY="574.0" text="Camino:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtResultBFS" layoutX="118.0" layoutY="572.0" prefHeight="25.0" prefWidth="490.0" />
+      <Separator layoutY="433.0" prefHeight="31.0" prefWidth="765.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="433.0" />
+      <Separator layoutY="266.0" prefHeight="31.0" prefWidth="765.0" />
+      <Separator layoutX="364.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="281.0" prefWidth="51.0" />
+    </children>
+</AnchorPane>
